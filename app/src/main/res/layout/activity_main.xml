@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+
+
     <!-- Using Scroll view-->
     <ScrollView
         android:layout_width="match_parent"
@@ -38,7 +40,7 @@
                 android:layout_height="30dp" />
 
             <!-- using horizontal linear layouts to arrange teams-->
-            <LinearLayout
+             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
@@ -190,12 +192,6 @@
                 android:layout_height="30dp" />
 
             <!-- scoring options title-->
-            <TextView
-                android:id="@+id/ScoringOptionTitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/ScoringOptions"
-                tools:text="@string/ScoringOptions" />
 
             <!-- horizontal linear layout to centre the radio buttons-->
             <LinearLayout
@@ -256,6 +252,13 @@
                         android:layout_height="wrap_content"
                         android:text="@string/Wicket" />
 
+                    <TextView
+                        android:id="@+id/ScoringOptionTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/ScoringOptions"
+                        tools:text="@string/ScoringOptions" />
+
 
                 </RadioGroup>
                 <!-- Space to centre-->
@@ -292,4 +295,4 @@
 
         </LinearLayout>
     </ScrollView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

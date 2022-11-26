@@ -1,11 +1,17 @@
 package com.pruthvi_score
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import android.widget.Button
 import android.widget.RadioGroup
 import android.widget.TextView
+import android.widget.Toast
+import android.widget.Toolbar
 import androidx.appcompat.app.AppCompatActivity
+
 class MainActivity : AppCompatActivity(), View.OnClickListener {
     //variables to hold Runs and Wickets scored by both teams
     private var teamOneRun = 0
@@ -38,7 +44,24 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         scoringOptions.setOnCheckedChangeListener { group: RadioGroup?, checkedId: Int -> updateScreen() }
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.about,menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.item1 -> Toast.makeText(this, "about", Toast.LENGTH_SHORT).show()
+            R.id.item2 -> Toast.makeText(this, "settings", Toast.LENGTH_SHORT).show()
+
+
+        }
+
+        return super.onOptionsItemSelected(item)
+    }
     override fun onClick(view: View) {
+
+
         //integer array to hold run and wicket value from the TextView
         var runsAndWicket: IntArray
 
@@ -65,8 +88,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         if (runsAndWicket.size > 1) {
             teamTwoWicket = runsAndWicket[1]
         }
-
-        //scoreValue is fetched as per the radiobutton selected by the user
+           //scoreValue is fetched as per the radiobutton selected by the user
         val scoreValue = scoringValue
         when (view.id) {
             R.id.TeamOneIncrease ->                 //if user selects wicket radiobutton then the scoreValue will be -1
