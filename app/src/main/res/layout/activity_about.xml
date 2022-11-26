@@ -39,12 +39,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="30dp" />
             <TextView
-                android:id="@+id/TeamName1"
                 android:layout_width="match_parent"
+                android:textColor="@color/black"
                 android:layout_height="wrap_content"
-                android:text="Name - Pruthvi Soni and Sakshi
-                              Course Code - Java1001
-                              "
+
                 />
 
         </LinearLayout>
